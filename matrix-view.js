@@ -4,7 +4,7 @@ var margin = {top: 80, right: 180, bottom: 100, left: 80},
 
 var x = d3.scale.ordinal().rangeBands([0, width]),
     z = d3.scale.linear().domain([0, 4]).clamp(true),
-    c = d3.scale.category10().domain(d3.range(10));
+    c = d3.scale.category10().domain(d3.range(7));
 
 var svg = d3.select("#header2").append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -40,7 +40,7 @@ d3.json("miserables.json", function(miserables) {
 
 sampleCategoricalData[0]="Different Region";
 
-  verticalLegend = d3.svg.legend().labelFormat("none").cellPadding(5).orientation("vertical").units("Region by Color").cellWidth(25).cellHeight(18).inputScale(c,sampleCategoricalData).cellStepping(10);
+  verticalLegend = d3.svg.legend().labelFormat("none").cellPadding(5).orientation("vertical").units("Sector").cellWidth(25).cellHeight(18).inputScale(c,sampleCategoricalData).cellStepping(10);
 
   d3.selectAll("svg")
 .append("g").attr("transform", "translate("+(width+130)+",250)").attr("class", "legend").call(verticalLegend);

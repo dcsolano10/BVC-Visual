@@ -4,6 +4,7 @@
 
 html {
   min-width: 800px;
+  margin-left: 15% !important;
 }
 
 .ocks-org body {
